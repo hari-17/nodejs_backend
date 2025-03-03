@@ -1,7 +1,7 @@
 {
   "name": "package",
   "version": "1.0.0",
-  "description": "node package manager",
+  "description": "node package managersssss",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
