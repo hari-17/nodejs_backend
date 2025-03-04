@@ -108,9 +108,18 @@ app.put('/update/:id',(req,res)=>{
 
 
 //delete by id
-app.delete('/delete/:id',(req,res)=>{
-    
-})
+app.delete('/delete/:id', (req, res) => {
+    const bookID = parseInt(req.params.id); // Convert to number
+    const bookIndex = books.findIndex(i => i.id === bookID); // Find index
+
+    if (bookIndex !== -1) {
+        const deletedBook = books.splice(bookIndex, 1); // Remove book
+        res.json({ message: "Book deleted", book: deletedBook[0] });
+    } else {
+        res.status(404).json({ message: "Book not found" });
+    }
+});
+
 
 const PORT =3000;
 
